@@ -15,7 +15,7 @@ namespace WebAdvert.Web.Controllers
 		private readonly SignInManager<CognitoUser> signInManager;
 		private readonly UserManager<CognitoUser> userManager;
 		private readonly CognitoUserPool pool;
-
+		
 		public AccountController(SignInManager<CognitoUser> signInManager, UserManager<CognitoUser> userManager, CognitoUserPool pool)
 		{
 			this.signInManager = signInManager;
@@ -64,7 +64,7 @@ namespace WebAdvert.Web.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				var user = await this.userManager.FindByEmailAsync(model.Email).ConfigureAwait(false);
+				var user = await this.userManager.FindByEmailAsync(model.Email).ConfigureAwait(false);				
 				if (user == null)
 				{
 					ModelState.AddModelError("NotFound", "A user with the given email address was not found");

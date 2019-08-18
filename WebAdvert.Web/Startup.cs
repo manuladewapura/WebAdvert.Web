@@ -43,7 +43,7 @@ namespace WebAdvert.Web
 				};
 			});
 
-			services.ConfigureApplicationCookie(option => option.LoginPath = "Account/Login");
+			services.ConfigureApplicationCookie(option => option.LoginPath = "/Account/Login");
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 		}
 
